@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 import os
 import re
 import shutil
 from datetime import datetime
 import argparse
 
-MIN_YEAR = 2015
+MIN_YEAR = 1995
 MAX_YEAR = 2025
 
 def extract_year_from_transcript(file_path):
@@ -12,7 +13,7 @@ def extract_year_from_transcript(file_path):
     Extracts and returns the year from the transcript file located at file_path by searching for a date pattern.
     Returns None if no valid date is found or if the date format is incorrect.
     """
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
         for line in f:
             match = re.search(r"DATE:\s+([A-Za-z]+ \d{1,2}, \d{4})", line, re.IGNORECASE)
             if match:

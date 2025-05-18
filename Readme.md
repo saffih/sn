@@ -26,6 +26,12 @@ pip install llama-index openai python-dotenv
 You can get Security Now transcripts from:
 - https://www.grc.com/securitynow.htm
 
+To download add transcripts run:
+```bash
+./download_fast.py
+```
+
+It will pull all files and store under transcripts dir
 To download a range of `.txt` transcripts (e.g., episodes 480 to 500):
 ```bash
 mkdir -p transcripts
@@ -45,7 +51,7 @@ Use the included `sortfiles.py` script to organize `.txt` transcript files into 
 
 By default, the script looks for transcripts in the `./transcripts` directory. If your transcripts are located elsewhere, you can specify the target directory using the `--transcripts-dir` parameter. For example:
 ```bash
-python sortfiles.py --transcripts-dir /path/to/your/transcripts
+python sortfiles.py --transcripts-dir ./transcripts
 ```
 If no directory is specified, running:
 ```bash
